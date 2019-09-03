@@ -8,16 +8,17 @@ import {
   NbRequestPasswordComponent,
   NbResetPasswordComponent,
 } from '@nebular/auth';
-
+import { AuthGuardService } from './auth/auth-guard.service';
 
 const routes: Routes = [
   {
     path: 'pages',
+    canLoad: [AuthGuardService],
     loadChildren: () => import('./pages/pages.module')
       .then(m => m.PagesModule),
   },
   {
-    path: 'auth',
+    path: 'test',
     component: NbAuthComponent,
     children: [
       {
@@ -46,12 +47,16 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'auth',
+    loadChildren: './auth/auth.module#AuthModule'
+  },
   { path: '', redirectTo: 'pages', pathMatch: 'full' },
   { path: '**', redirectTo: 'pages' } // **表示通配符
 ];
 
 const config: ExtraOptions = {
-  useHash: false // 修改位置策略（LocationStrategy），用 URL 片段（#）代替 history API
+  useHash: true // 修改位置策略（LocationStrategy），用 URL 片段（#）代替 history API
 };
 
 @NgModule({

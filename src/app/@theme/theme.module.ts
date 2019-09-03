@@ -12,9 +12,14 @@ import {
   NbSelectModule,
   NbIconModule,
   NbThemeModule,
+  NbCheckboxModule,
+  NbSpinnerModule,
+  NbCardModule,
+  NbInputModule
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbSecurityModule } from '@nebular/security';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
   FooterComponent,
@@ -38,6 +43,8 @@ import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CORPORATE_THEME } from './styles/theme.corporate';
 import { DARK_THEME } from './styles/theme.dark';
 
+const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
+
 const NB_MODULES = [
   NbLayoutModule,
   NbMenuModule,
@@ -51,6 +58,10 @@ const NB_MODULES = [
   NbSelectModule,
   NbIconModule,
   NbEvaIconsModule,
+  NbCheckboxModule,
+  NbSpinnerModule,
+  NbCardModule,
+  NbInputModule
 ];
 const COMPONENTS = [
   HeaderComponent,
@@ -69,8 +80,8 @@ const PIPES = [
 ];
 
 @NgModule({
-  imports: [CommonModule, ...NB_MODULES],
-  exports: [CommonModule, ...PIPES, ...COMPONENTS],
+  imports: [BASE_MODULES, ...NB_MODULES],
+  exports: [BASE_MODULES, ...PIPES, ...COMPONENTS, NB_MODULES],
   declarations: [...COMPONENTS, ...PIPES],
 })
 export class ThemeModule {
