@@ -1,0 +1,27 @@
+<div [nbSpinner]="loading" nbSpinnerMessage="加载中..." nbSpinnerStatus="primary" nbSpinnerSize='large'
+    nbSpinnerMessage="">
+    <app-auth-block>
+        <h2 class="title">后台管理系统</h2>
+        <small class="form-text sub-title">你好! 请用你的账号登录！</small>
+        <form #form="ngForm" autocomplete="off">
+            <div class="form-group">
+                <input [(ngModel)]="user.userName" type="text" nbInput fullWidth status="success" name="userName"
+                    placeholder="请输入uid号">
+            </div>
+
+            <div class="form-group">
+                <input [(ngModel)]="user.password" type="password" nbInput fullWidth status="success" name="password"
+                    placeholder="请输入密码">
+            </div>
+
+            <div class="form-group accept-group col-sm-12">
+                <nb-checkbox name="rememberMe" [(ngModel)]="rememberMe" (checkedChange)="toggle($event)">记住密码
+                </nb-checkbox>
+            </div>
+            <button class="btn btn-primary vas-button" [ngClass]="{'btn-success': theme === 'default'}"
+                (click)="login(user.userName,user.password)">
+                登录
+            </button>
+        </form>
+    </app-auth-block>
+</div>

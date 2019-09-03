@@ -1,0 +1,12 @@
+@import '../../../@theme/styles/themes.scss';
+@include nb-install-component() {
+  .content {
+    text-align: center;
+    min-width: 17.5rem;
+    max-width: 31.25rem;
+    font-size: 1.3rem;
+  }
+  .footer-buttons {
+    text-align: center;
+  }
+}

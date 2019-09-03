@@ -1,0 +1,17 @@
+@import '../../@theme/styles/themes.scss';
+@include nb-install-component() {
+  .vas-button {
+    width:100%;
+    height:45px;
+    border:none;
+    border-radius:5px;
+    color:white;
+    cursor:pointer;
+  }
+  .btn-pulse {
+    opacity:0.68 !important;
+  }
+  .vas-button:hover {
+    opacity:0.8;
+  }
+}
