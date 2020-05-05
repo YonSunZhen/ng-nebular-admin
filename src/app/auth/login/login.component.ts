@@ -36,4 +36,8 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  toggle(checked: boolean) {
+    console.log(checked);
+  }
+
 }
