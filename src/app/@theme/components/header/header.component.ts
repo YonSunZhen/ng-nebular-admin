@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   private destroy$: Subject<void> = new Subject<void>();
-  userPictureOnly: boolean = false;
+  userPictureOnly = false;
   user: any;
 
   themes = [
@@ -26,18 +26,18 @@ export class HeaderComponent implements OnInit, OnDestroy {
       value: 'default',
       name: 'Light',
     },
-    {
-      value: 'dark',
-      name: 'Dark',
-    },
+    // {
+    //   value: 'dark',
+    //   name: 'Dark',
+    // },
     {
       value: 'cosmic',
       name: 'Cosmic',
     },
-    {
-      value: 'corporate',
-      name: 'Corporate',
-    },
+    // {
+    //   value: 'corporate',
+    //   name: 'Corporate',
+    // },
   ];
 
   currentTheme = 'default';
